@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Episode 1: Journey into AI - An Introduction"
-date: 2023-06-01
+date: 2023-05-30
 enclosure:
   url: https://ikowave.github.io/podcast/episodes/episode1.mp3
   type: audio/mpeg
