@@ -1,0 +1,22 @@
+# Site output
+/_site/
+
+# Jekyll cache
+/.jekyll-cache/
+
+# Environment configuration
+.env
+
+# Jekyll metadata
+.jekyll-metadata
+
+# Bundler config
+/.bundle/
+/vendor/bundle
+
+# Node modules
+/node_modules/
+
+# MacOS files
+.DS_Store
+
