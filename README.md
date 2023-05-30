@@ -28,6 +28,3 @@ If you have any questions, feel free to reach out. Let's ride the wave of AI tog
 ## License 📜
 
 The content of this project itself is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-nc-sa/4.0/) license, and the underlying source code used to format and display that content is licensed under the [MIT license](https://opensource.org/licenses/mit-license.php).
-```
-
-You can replace `[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-nc-sa/4.0/)` and `[MIT license](https://opensource.org/licenses/mit-license.php)` with the appropriate licenses for your podcast and code, respectively.
