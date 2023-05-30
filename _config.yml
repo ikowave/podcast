@@ -6,7 +6,8 @@ baseurl: "/podcast" # the subpath of your site, e.g. /blog
 url: "https://ikowave.github.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: Ikowave
 github_username:  Ikowave
-theme: minima
+theme: minimal-mistakes-jekyll
 plugins:
   - jekyll-feed
+  - jekyll-include-cache
 
