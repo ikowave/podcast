@@ -3,12 +3,12 @@ layout: post
 title: "Episode 1: Journey into AI - An Introduction"
 date: 2023-06-01
 enclosure:
-  url: https://ikowave.github.io/episodes/episode1.mp3
+  url: https://ikowave.github.io/podcast/episodes/episode1.mp3
   type: audio/mpeg
   length: 12345678
 itunes:
   duration: 00:05:00
-  image: https://ikowave.github.io/episodes/episode1.jpg
+  image: https://ikowave.github.io/podcast/episodes/episode1.jpg
   summary: Introduction to Artificial Intelligence, its significance, and impact.
 ---
 Welcome to the inaugural episode of IkoWave, your journey into the fascinating world of artificial intelligence.
