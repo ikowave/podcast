@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Episode 8: July 29th episode"
+title: "Episode 8: July 20th episode"
 date: 2023-07-20
 enclosure:
   url: https://ikowave.github.io/podcast/episodes/episode8.mp3
