@@ -1,8 +1,77 @@
-<article>
-  <header>
-    <h2>{{ page.title }}</h2>
-    <p>{{ page.date | date: "%B %e, %Y" }}</p>
-  </header>
-  {{ content }}
-</article>
+---
+layout: default
+---
+<article class="episode">
+    <style>
+        .episode {
+            padding: 2rem;
+        }
+        
+        .episode-header {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #eee;
+        }
+        
+        .episode-title {
+            margin: 0 0 1rem 0;
+            color: #2c3e50;
+        }
+        
+        .episode-meta {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .episode-player {
+            margin: 2rem 0;
+            width: 100%;
+        }
+        
+        .episode-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        audio {
+            width: 100%;
+            margin: 1rem 0;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.5rem 1rem;
+            background-color: #3498db;
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+        
+        .back-link:hover {
+            background-color: #2980b9;
+            text-decoration: none;
+        }
+    </style>
 
+    <header class="episode-header">
+        <h1 class="episode-title">{{ page.title }}</h1>
+        <div class="episode-meta">
+            Published on {{ page.date | date: "%B %d, %Y" }}
+        </div>
+    </header>
+
+    <div class="episode-player">
+        <audio controls>
+            <source src="{{ site.baseurl }}/episodes/episode{{ page.episode_number }}.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <div class="episode-content">
+        {{ content }}
+    </div>
+
+    <a href="{{ site.baseurl }}/" class="back-link">← Back to Episodes</a>
+</article>
