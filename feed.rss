@@ -1,67 +1,24 @@
+---
+layout: null
+---
 <?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" 
-     xmlns:content="http://purl.org/rss/1.0/modules/content/"
-     xmlns:podcast="https://podcastindex.org/namespace/1.0" 
-     version="2.0">
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
     <channel>
         <title>{{ site.title }}</title>
-        <description><![CDATA[{{ site.description }}]]></description>
-        <link>{{ site.url }}{{ site.baseurl }}</link>
+        <description>{{ site.description }}</description>
+        <link>{{ site.url }}</link>
         <language>en-us</language>
-        <copyright>© {{ 'now' | date: "%Y" }} {{ site.title }}</copyright>
-        <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
-        
-        <!-- iTunes specific tags -->
-        <itunes:author>{{ site.title }}</itunes:author>
-        <itunes:summary><![CDATA[{{ site.description }}]]></itunes:summary>
-        <itunes:type>episodic</itunes:type>
-        <itunes:owner>
-            <itunes:name>{{ site.title }}</itunes:name>
-            <itunes:email>{{ site.email }}</itunes:email>
-        </itunes:owner>
-        <itunes:explicit>false</itunes:explicit>
-        <itunes:category text="Technology">
-            <itunes:category text="Artificial Intelligence"/>
-        </itunes:category>
-        <itunes:image href="{{ site.url }}{{ site.baseurl }}/assets/ikowave.png"/>
-        <image>
-            <url>{{ site.url }}{{ site.baseurl }}/assets/ikowave.png</url>
-            <title>{{ site.title }}</title>
-            <link>{{ site.url }}{{ site.baseurl }}</link>
-        </image>
-        
         {% for post in site.posts %}
         <item>
             <title>{{ post.title }}</title>
-            <itunes:title>{{ post.title }}</itunes:title>
-            <description><![CDATA[{{ post.content }}]]></description>
-            <itunes:summary><![CDATA[{{ post.itunes.summary | default: post.content | strip_html | truncate: 4000 }}]]></itunes:summary>
+            <description>{{ post.itunes.summary }}</description>
+            <enclosure url="{{ post.enclosure.url }}" type="{{ post.enclosure.type }}" length="{{ post.enclosure.length }}" />
+            <guid>{{ site.url }}{{ post.url }}</guid>
             <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-            <link>{{ site.url }}{{ site.baseurl }}{{ post.url }}</link>
-            <guid isPermaLink="true">{{ site.url }}{{ site.baseurl }}{{ post.url }}</guid>
-            
-            <enclosure 
-                url="{{ site.url }}{{ site.baseurl }}/episodes/episode{{ post.name | replace: '-episode-', '' | replace: '.md', '' }}.mp3"
-                type="audio/mpeg"
-                length="{{ post.enclosure.length }}"
-            />
-            
-            <!-- iTunes specific episode tags -->
-            <itunes:author>{{ site.title }}</itunes:author>
             <itunes:duration>{{ post.itunes.duration }}</itunes:duration>
-            <itunes:explicit>false</itunes:explicit>
-            <itunes:episodeType>full</itunes:episodeType>
-            <itunes:episode>{{ post.name | replace: '-episode-', '' | replace: '.md', '' }}</itunes:episode>
-            
-            {% if post.transcript %}
-            <podcast:transcript 
-                url="{{ site.url }}{{ site.baseurl }}/episodes/episode{{ post.name | replace: '-episode-', '' | replace: '.md', '' }}.mp3.vtt"
-                type="text/vtt"
-            />
-            {% endif %}
-            
-            <itunes:image href="{{ site.url }}{{ site.baseurl }}/assets/ikowave.png"/>
+            <itunes:image href="{{ post.itunes.image }}" />
         </item>
         {% endfor %}
     </channel>
 </rss>
+
